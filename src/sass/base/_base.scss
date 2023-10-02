@@ -1,0 +1,51 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  //This defines what 1rem is
+  font-size: 62.5%;
+
+  @include respond(tab-land) {
+    // width < 1200?
+    font-size: 56.25%; //1rem = 9px; 9/16 = 56.25%
+  }
+
+  @include respond(tab-port) {
+    // width < 900?
+    font-size: 50%; //1rem = 8px; 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12; 12/16 = 75%
+  }
+}
+body {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif !important;
+  background-color: white;
+}
+
+.container {
+  background-color: $color-black;
+  display: grid;
+  grid-template-rows: repeat(8, min-content);
+  grid-template-columns:
+    [full-start] minmax(5rem, 1fr) [center-start] repeat(6, [col-start] minmax(min-content, 23rem) [col-end])
+    [center-end] minmax(5rem, 1fr) [full-end];
+
+  @include respond(tab-land) {
+    grid-template-columns:
+      [full-start] minmax(2rem, 1fr) [center-start] repeat(6, [col-start] minmax(min-content, 23rem) [col-end])
+      [center-end] minmax(2rem, 1fr) [full-end];
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

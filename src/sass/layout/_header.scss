@@ -1,0 +1,171 @@
+.header {
+    background-color: #002a89;
+    color: white;
+
+    grid-column: full-start / full-end;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 3rem;
+
+    @include respond(tab-land){
+        padding: .5rem 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    &__logo {
+        width: 10%;
+        margin: 0.8rem 0 0 0;
+        cursor: pointer;
+
+        img {
+            width: 16rem;
+
+            @include respond(tab-land){
+                width: 100%;
+            }
+        }
+        
+        @include respond(tab-land){
+            width: 40%;
+            margin: 1rem auto 0 2rem;
+        }
+    }
+    &__list {
+        width: 71%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        align-self: stretch;
+        list-style: none;
+        font-size: 1.4rem;
+        font-weight: 700;
+
+        @include respond(tab-land){
+            width: 100%;
+            flex-direction: column;
+            order: 3;
+            font-size: 2.7rem;
+            padding: 3rem 2rem;
+        }
+    }
+    &__item {
+        cursor: pointer;
+        transition: 0.2s;
+        align-self: stretch;
+        text-decoration: none;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        &:hover {
+            &::after {
+                position: absolute;
+                content: "";
+                top: 65%;
+                height: 5px;
+                border-radius: 50px;
+                width: 100%;
+                background-color: #f9bb30;
+                animation-duration: 0.2s;
+                animation-name: openBorder;
+
+                @include respond(tab-land){
+                    display: none;
+                }
+            }
+        }
+
+        @include respond(tab-land){
+            justify-content: flex-start;
+            margin: 1.3rem 0;
+        }
+    }
+
+    &__search-box {
+        position: relative;
+
+        @include respond(tab-land){
+            order: 4;
+            width: 100%;
+            padding: 0 2rem;
+        }
+    }
+    &__input {
+        height: 3.6rem;
+        padding-left: 1.3rem;
+        padding-top: 0.3rem;
+        border-radius: 1.1rem;
+        border: none;
+        font-family: "Montserrat", sans-serif;
+
+        &::placeholder {
+            font-weight: 500;
+            font-size: 1.4rem;
+            color: #4b5579;
+            font-family: "Montserrat", sans-serif;
+
+            @include respond(tab-land){
+                font-size: 2.3rem;
+                padding-left: 1.5rem;
+            }
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+
+        &--icon {
+            cursor: pointer;
+            position: absolute;
+            top: .8rem;
+            right: 1.2rem;
+            width: 2rem;
+
+            @include respond(tab-land){
+                width: 3.3rem;
+                top: 18%;
+                right: 5rem;
+            }
+        }
+        
+        @include respond(tab-land){
+            width: 100%;
+            margin-bottom: 3rem;
+            height: 7rem;
+            border-radius: 2.5rem;
+        }
+    }
+}
+
+.active {
+    position: relative;
+    &::after {
+        position: absolute;
+        content: "";
+        height: 9px;
+        width: 9px;
+        background-color: #f9bb30;
+        border-radius: 100%;
+        top: 65%;
+    }
+
+    @include respond(tab-land){
+        &::after{
+            display: none;
+        }
+    }
+}
+
+@keyframes openBorder {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
