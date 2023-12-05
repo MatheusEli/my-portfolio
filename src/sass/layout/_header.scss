@@ -1,9 +1,123 @@
 .header {
-    color: white;
+  color: white;
+  height: 100vh;
+  grid-column: center-start / center-end;
+  position: relative;
+  border-bottom: 1px solid #FFF;
 
-    grid-column: full-start / full-end;
+  &::after {
+    content: "";
+    width: 13rem;
+    height: 13rem;
+    background-image: url("../../assets/background-oval.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    bottom: 20%;
+    right: 31.4%;
+  }
+
+  &::before {
+    content: "";
+    width: 44rem;
+    height: 72rem;
+    background-color: #242424;
+    background-image: url("../../assets/developer.png");
+    background-position: 40% 100%;
+    background-repeat: no-repeat;
+    background-size: 140%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__text-box {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  h1 {
+    font-size: 8.8rem;
+    letter-spacing: -0.25rem;
+    line-height: 8.8rem;
+  }
+
+  span {
+    position: relative;
+    &::after {
+      content: "";
+      background-color: #4ee1a0;
+      height: 6px;
+      width: 100%;
+      position: absolute;
+      bottom: 1rem;
+      left: 0;
+    }
+  }
+
+  p {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    color: #d9d9d9;
+    width: 44rem;
+    margin-top: 4rem;
+  }
+
+  h6 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2.6rem;
+    letter-spacing: 2.286px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 6rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #4ee1a0;
+      bottom: -0.5rem;
+      left: 0;
+      transition: all 0.2s ease-out;
+    }
+
+    &:hover {
+      &::after {
+        transform: scaleY(3);
+      }
+    }
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 3.2rem;
+  letter-spacing: -0.444px;
+
+  margin-top: 4rem;
+
+  ul {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    list-style: none;
 
+    li {
+      margin: 0 1.2rem;
+
+      img{
+        width: 3rem;
+      }
+    }
+  }
 }

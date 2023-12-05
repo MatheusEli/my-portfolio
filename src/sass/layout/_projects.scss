@@ -1,0 +1,86 @@
+.projects {
+  grid-column: center-start / center-end;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    font-size: 8.8rem;
+    line-height: 8.8rem;
+    letter-spacing: -2.5px;
+    font-weight: 700;
+    display: inline-block;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 7rem;
+    list-style: none;
+    margin-top: 8rem;
+
+    li {
+      width: 48%;
+      transition: all 0.4s;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-1.5rem);
+      }
+
+      figcaption {
+        color: var(--Grey, #d9d9d9);
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 2.8rem;
+        text-transform: uppercase;
+      }
+
+      h5 {
+        color: white;
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 3.2rem;
+        font-feature-settings: "clig" off, "liga" off;
+        margin-top: 2rem;
+      }
+
+      img {
+        width: 100%;
+        height: 40rem;
+        object-fit: cover;
+        object-position: top;
+      }
+    }
+  }
+
+  h6 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2.6rem;
+    letter-spacing: 2.286px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #4ee1a0;
+      bottom: -0.5rem;
+      left: 0;
+      transition: all 0.2s ease-out;
+    }
+
+    &:hover {
+      &::after {
+        transform: scaleY(3);
+      }
+    }
+  }
+}

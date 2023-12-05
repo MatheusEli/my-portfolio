@@ -1,0 +1,23 @@
+.languages{
+    grid-column: center-start/center-end;
+    color: white;
+    padding: 5rem 0 15rem 0;
+
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 6rem;
+
+        li{
+            width: 30%;
+        }
+        h4{
+            font-size: 4.8rem;
+            font-weight: 700;
+            line-height: 5.6rem;
+            letter-spacing: -1.5px;
+        }
+    }
+}
