@@ -1,34 +1,41 @@
 import "./sass/main.scss";
-import NatoursImage from './assets/natours.png';
-import TEMSImage from './assets/tems.png';
-import SOSTEMSImage from './assets/sostems.png';
-import NexterImage from './assets/nexter.png';
-import TrilloImage from './assets/trillo.png';
+import NatoursImage from "./assets/natours.png";
+import TEMSImage from "./assets/tems.png";
+import SOSTEMSImage from "./assets/sostems.png";
+import NexterImage from "./assets/nexter.png";
+import TrilloImage from "./assets/trillo.png";
+import AtelieImage from "./assets/atelie.png";
+import { useRef } from "react";
 
 export default function App() {
+  const resultRef = useRef(null);
+
+  const contact = () => {
+    resultRef.current.scrollIntoView({ behavior: "smooth"});
+  };
   return (
     <div className="container">
       <section className="header">
         <nav className="navigation">
-          <a href="#">matheuseli</a>
+          <a rel="noreferrer" href="#">matheuseli</a>
           <ul>
             <li>
-              <a href="#">
+              <a rel="noreferrer" href="#">
                 <img src="github.svg" />
               </a>
             </li>
             <li>
-              <a href="#">
+              <a rel="noreferrer" href="#">
                 <img src="mentor.svg" />
               </a>
             </li>
             <li>
-              <a href="#">
+              <a rel="noreferrer" href="#">
                 <img src="linkedin.svg" />
               </a>
             </li>
             <li>
-              <a href="#">
+              <a rel="noreferrer" href="#">
                 <img src="twitter.svg" />
               </a>
             </li>
@@ -46,7 +53,7 @@ export default function App() {
             building accessible web apps that users love.
           </p>
 
-          <h6>CONTACT ME</h6>
+          <h6 onClick={contact}>CONTACT ME</h6>
         </div>
       </section>
 
@@ -81,12 +88,16 @@ export default function App() {
 
       <section className="projects">
         <h2>Projects</h2>
-        <h6>CONTACT ME</h6>
+        <h6 onClick={contact}>CONTACT ME</h6>
 
         <ul>
           <li>
+            <div className='projects__button-box'>
+              <a rel="noreferrer" href='https://matheuseli-natours.netlify.app/' target='_blank'>view project</a>
+              <a rel="noreferrer" href='https://github.com/MatheusEli/natours' target='_blank'>view code</a>
+            </div>
             <figure>
-              <img src={NatoursImage}  alt="Natours Website"/>
+              <img src={NatoursImage} alt="Natours Website" />
               <figcaption>
                 <h5>Natours</h5>
                 HTML SASS
@@ -94,8 +105,11 @@ export default function App() {
             </figure>
           </li>
           <li>
+            <div className='projects__button-box'>
+              <a rel="noreferrer" href='https://tems.com.br/' target='_blank'>view project</a>
+            </div>
             <figure>
-              <img src={TEMSImage}  alt="Natours Website"/>
+              <img src={TEMSImage} alt="TEMS Website" />
               <figcaption>
                 <h5>TEMS</h5>
                 REACT HTML SASS JAVASCRIPT
@@ -103,8 +117,12 @@ export default function App() {
             </figure>
           </li>
           <li>
+            <div className='projects__button-box'>
+              <a rel="noreferrer" href='https://matheuseli.github.io/Nexter/' target='_blank'>view project</a>
+              <a rel="noreferrer" href='https://github.com/MatheusEli/Nexter' target='_blank'>view code</a>
+            </div>
             <figure>
-              <img src={NexterImage}  alt="Natours Website"/>
+              <img src={NexterImage} alt="Nexter Website" />
               <figcaption>
                 <h5>Nexter</h5>
                 HTML SASS
@@ -112,19 +130,80 @@ export default function App() {
             </figure>
           </li>
           <li>
+            <div className='projects__button-box'>
+              <a rel="noreferrer" href='https://tems.com.br/sostems/#/sobre-campanha' target='_blank'>view project</a>
+              <a rel="noreferrer" href='https://github.com/MatheusEli/landing-page-sostems' target='_blank'>view code</a>
+            </div>
             <figure>
-              <img src={SOSTEMSImage}  alt="Natours Website"/>
+              <img src={SOSTEMSImage} alt="SOS TEMS Website" />
               <figcaption>
-                <h5>SOS TEMS</h5>
+                <h5>Campanha SOS TEMS</h5>
                 ANGULAR HTML SASS TYPESCRIPT
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <div className='projects__button-box'>
+              <a rel="noreferrer" href='https://matheuseli.github.io/Trillo/' target='_blank'>view project</a>
+              <a rel="noreferrer" href='https://github.com/MatheusEli/Trillo' target='_blank'>view code</a>
+            </div>
+            <figure>
+              <img src={TrilloImage} alt="Trillo Website" />
+              <figcaption>
+                <h5>Trillo</h5>
+                HTML SASS
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <div className='projects__button-box'>
+              <a rel="noreferrer" href='https://matheuseli-atelie-frontend.netlify.app' target='_blank'>view project</a>
+              <a rel="noreferrer" href='https://github.com/MatheusEli/atelie-frontend-teste' target='_blank'>view code</a>
+            </div>
+            <figure>
+              <img src={AtelieImage} alt="Atelie Website" />
+              <figcaption>
+                <h5>Campanha Atelie</h5>
+                REACT HTML SASS JAVASCRIPT
               </figcaption>
             </figure>
           </li>
         </ul>
       </section>
 
-      <section className="contact">
+      <section className="contact" ref={resultRef}>
+        <div className="contact__container">
+          <div>
+            <h2>Contact</h2>
+            <p>
+              I would love to hear about your project and how I could help.
+              Please fill in the form, and I’ll get back to you as soon as
+              possible.
+            </p>
+          </div>
 
+          <form className='form'>
+            <div className="form__input-box">
+              <input
+                type="text"
+                placeholder='name'
+              />
+            </div>
+            <div className="form__input-box">
+              <input
+                type="text"
+                placeholder='email'
+              />
+            </div>
+            <div className="form__input-box">
+              <textarea
+                placeholder='message'
+              />
+            </div>
+
+            <button>Send Message</button>
+          </form>
+        </div>
       </section>
     </div>
   );
