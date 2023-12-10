@@ -2,6 +2,12 @@
   grid-column: center-start/center-end;
   color: white;
   padding: 5rem 0 15rem 0;
+  
+  @include respond(phone){
+    border-bottom: 1px solid white;
+    padding-bottom: 5rem;
+    margin-bottom: 10rem;
+  }
 
   ul {
     list-style: none;
@@ -10,6 +16,10 @@
     flex-wrap: wrap;
     row-gap: 6rem;
 
+    @include respond(phone){
+      row-gap: 4rem;
+    }
+
     li {
       width: 30%;
       transition: all 0.3s;
@@ -17,6 +27,32 @@
 
       &:hover {
         transform: translateY(-1rem);
+      }
+
+      @include respond(tab-land) {
+        width: 50%;
+
+        &:hover {
+          transform: none;
+        }
+      }
+
+      @include respond(phone) {
+        width: 100%;
+        text-align: center;
+      }
+
+      p {
+        color: var(--Grey, #d9d9d9);
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 2.8rem;
+        margin-top: 1.2rem;
+
+        @include respond(phone) {
+          font-size: 2rem;
+          line-height: 2.6rem;
+        }
       }
     }
     h4 {

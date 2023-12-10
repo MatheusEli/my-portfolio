@@ -7,42 +7,67 @@ import TrilloImage from "./assets/trillo.png";
 import AtelieImage from "./assets/atelie.png";
 import { useRef } from "react";
 
+import { ReactComponent as GithubIcon } from "./assets/github.svg";
+import { ReactComponent as MentorIcon } from "./assets/mentor.svg";
+import { ReactComponent as LinkedinIcon } from "./assets/linkedin.svg";
+import { ReactComponent as TwitterIcon } from "./assets/twitter.svg";
+
+import { motion } from "framer-motion";
+
 export default function App() {
   const resultRef = useRef(null);
 
   const contact = () => {
-    resultRef.current.scrollIntoView({ behavior: "smooth"});
+    resultRef.current.scrollIntoView({ behavior: "smooth" });
   };
+
+
   return (
     <div className="container">
       <section className="header">
         <nav className="navigation">
-          <a rel="noreferrer" href="#">matheuseli</a>
+          matheuseli
           <ul>
             <li>
-              <a rel="noreferrer" href="#">
-                <img src="github.svg" />
+              <a
+                rel="noreferrer"
+                href="https://github.com/MatheusEli"
+                target="_blank"
+              >
+                <GithubIcon />
               </a>
             </li>
             <li>
-              <a rel="noreferrer" href="#">
-                <img src="mentor.svg" />
+              <a
+                rel="noreferrer"
+                href="https://www.frontendmentor.io/profile/MatheusEli"
+                target="_blank"
+              >
+                <MentorIcon />
               </a>
             </li>
             <li>
-              <a rel="noreferrer" href="#">
-                <img src="linkedin.svg" />
+              <a
+                rel="noreferrer"
+                href="https://www.linkedin.com/in/matheus-eli-ferreira/"
+                target="_blank"
+              >
+                <LinkedinIcon />
               </a>
             </li>
             <li>
-              <a rel="noreferrer" href="#">
-                <img src="twitter.svg" />
+              <a
+                rel="noreferrer"
+                href="https://twitter.com/MatheusEli99"
+                target="_blank"
+              >
+                <TwitterIcon />
               </a>
             </li>
           </ul>
         </nav>
 
-        <div className="header__text-box">
+        <div  className="header__text-box">
           <h1>
             Nice to meet you!
             <br />
@@ -92,9 +117,21 @@ export default function App() {
 
         <ul>
           <li>
-            <div className='projects__button-box'>
-              <a rel="noreferrer" href='https://matheuseli-natours.netlify.app/' target='_blank'>view project</a>
-              <a rel="noreferrer" href='https://github.com/MatheusEli/natours' target='_blank'>view code</a>
+            <div className="projects__button-box">
+              <a
+                rel="noreferrer"
+                href="https://matheuseli-natours.netlify.app/"
+                target="_blank"
+              >
+                view project
+              </a>
+              <a
+                rel="noreferrer"
+                href="https://github.com/MatheusEli/natours"
+                target="_blank"
+              >
+                view code
+              </a>
             </div>
             <figure>
               <img src={NatoursImage} alt="Natours Website" />
@@ -105,8 +142,10 @@ export default function App() {
             </figure>
           </li>
           <li>
-            <div className='projects__button-box'>
-              <a rel="noreferrer" href='https://tems.com.br/' target='_blank'>view project</a>
+            <div className="projects__button-box">
+              <a rel="noreferrer" href="https://tems.com.br/" target="_blank">
+                view project
+              </a>
             </div>
             <figure>
               <img src={TEMSImage} alt="TEMS Website" />
@@ -117,9 +156,21 @@ export default function App() {
             </figure>
           </li>
           <li>
-            <div className='projects__button-box'>
-              <a rel="noreferrer" href='https://matheuseli.github.io/Nexter/' target='_blank'>view project</a>
-              <a rel="noreferrer" href='https://github.com/MatheusEli/Nexter' target='_blank'>view code</a>
+            <div className="projects__button-box">
+              <a
+                rel="noreferrer"
+                href="https://matheuseli.github.io/Nexter/"
+                target="_blank"
+              >
+                view project
+              </a>
+              <a
+                rel="noreferrer"
+                href="https://github.com/MatheusEli/Nexter"
+                target="_blank"
+              >
+                view code
+              </a>
             </div>
             <figure>
               <img src={NexterImage} alt="Nexter Website" />
@@ -130,9 +181,21 @@ export default function App() {
             </figure>
           </li>
           <li>
-            <div className='projects__button-box'>
-              <a rel="noreferrer" href='https://tems.com.br/sostems/#/sobre-campanha' target='_blank'>view project</a>
-              <a rel="noreferrer" href='https://github.com/MatheusEli/landing-page-sostems' target='_blank'>view code</a>
+            <div className="projects__button-box">
+              <a
+                rel="noreferrer"
+                href="https://tems.com.br/sostems/#/sobre-campanha"
+                target="_blank"
+              >
+                view project
+              </a>
+              <a
+                rel="noreferrer"
+                href="https://github.com/MatheusEli/landing-page-sostems"
+                target="_blank"
+              >
+                view code
+              </a>
             </div>
             <figure>
               <img src={SOSTEMSImage} alt="SOS TEMS Website" />
@@ -143,9 +206,21 @@ export default function App() {
             </figure>
           </li>
           <li>
-            <div className='projects__button-box'>
-              <a rel="noreferrer" href='https://matheuseli.github.io/Trillo/' target='_blank'>view project</a>
-              <a rel="noreferrer" href='https://github.com/MatheusEli/Trillo' target='_blank'>view code</a>
+            <div className="projects__button-box">
+              <a
+                rel="noreferrer"
+                href="https://matheuseli.github.io/Trillo/"
+                target="_blank"
+              >
+                view project
+              </a>
+              <a
+                rel="noreferrer"
+                href="https://github.com/MatheusEli/Trillo"
+                target="_blank"
+              >
+                view code
+              </a>
             </div>
             <figure>
               <img src={TrilloImage} alt="Trillo Website" />
@@ -156,9 +231,21 @@ export default function App() {
             </figure>
           </li>
           <li>
-            <div className='projects__button-box'>
-              <a rel="noreferrer" href='https://matheuseli-atelie-frontend.netlify.app' target='_blank'>view project</a>
-              <a rel="noreferrer" href='https://github.com/MatheusEli/atelie-frontend-teste' target='_blank'>view code</a>
+            <div className="projects__button-box">
+              <a
+                rel="noreferrer"
+                href="https://matheuseli-atelie-frontend.netlify.app"
+                target="_blank"
+              >
+                view project
+              </a>
+              <a
+                rel="noreferrer"
+                href="https://github.com/MatheusEli/atelie-frontend-teste"
+                target="_blank"
+              >
+                view code
+              </a>
             </div>
             <figure>
               <img src={AtelieImage} alt="Atelie Website" />
@@ -182,28 +269,61 @@ export default function App() {
             </p>
           </div>
 
-          <form className='form'>
+          <form className="form">
             <div className="form__input-box">
-              <input
-                type="text"
-                placeholder='name'
-              />
+              <input type="text" placeholder="name" />
             </div>
             <div className="form__input-box">
-              <input
-                type="text"
-                placeholder='email'
-              />
+              <input type="text" placeholder="email" />
             </div>
             <div className="form__input-box">
-              <textarea
-                placeholder='message'
-              />
+              <textarea placeholder="message" />
             </div>
 
             <button>Send Message</button>
           </form>
         </div>
+        <nav className="navigation">
+          matheuseli
+          <ul>
+            <li>
+              <a
+                rel="noreferrer"
+                href="https://github.com/MatheusEli"
+                target="_blank"
+              >
+                <GithubIcon />
+              </a>
+            </li>
+            <li>
+              <a
+                rel="noreferrer"
+                href="https://www.frontendmentor.io/profile/MatheusEli"
+                target="_blank"
+              >
+                <MentorIcon />
+              </a>
+            </li>
+            <li>
+              <a
+                rel="noreferrer"
+                href="https://www.linkedin.com/in/matheus-eli-ferreira/"
+                target="_blank"
+              >
+                <LinkedinIcon />
+              </a>
+            </li>
+            <li>
+              <a
+                rel="noreferrer"
+                href="https://twitter.com/MatheusEli99"
+                target="_blank"
+              >
+                <TwitterIcon />
+              </a>
+            </li>
+          </ul>
+        </nav>
       </section>
     </div>
   );

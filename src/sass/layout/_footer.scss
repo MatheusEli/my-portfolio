@@ -1,7 +1,10 @@
 .footer {
-    grid-column: full-start / full-end;
-    display: flex;
-    align-items: center;
-    
+    grid-column: center-start / center-end;
+    background-color: #242424;
     color: white;
+    position: relative;
+
+    .navigation{
+        position: static;
+    }
 }

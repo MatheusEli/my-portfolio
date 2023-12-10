@@ -13,6 +13,12 @@
     letter-spacing: -2.5px;
     font-weight: 700;
     display: inline-block;
+
+    @include respond(phone) {
+      font-size: 5rem;
+      line-height: 5rem;
+      letter-spacing: -1.136px;
+    }
   }
 
   ul {
@@ -27,6 +33,9 @@
       width: 48%;
       position: relative;
 
+      @include respond(phone){
+        width: 100%;
+      }
       &::after {
         position: absolute;
         top: 0;
@@ -102,6 +111,10 @@
         font-weight: 500;
         line-height: 2.8rem;
         text-transform: uppercase;
+
+        @include respond(phone){
+          font-size: 2rem;
+        }
       }
 
       h5 {
@@ -111,6 +124,10 @@
         line-height: 3.2rem;
         font-feature-settings: "clig" off, "liga" off;
         margin-top: 2rem;
+
+        @include respond(phone){
+          font-size: 3rem;
+        }
       }
 
       img {
@@ -145,6 +162,14 @@
     &:hover {
       &::after {
         transform: scaleY(3);
+      }
+    }
+
+    @include respond(phone) {
+      font-size: 2rem;
+
+      &::after {
+        bottom: -1.5rem;
       }
     }
   }

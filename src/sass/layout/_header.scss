@@ -3,7 +3,7 @@
   height: 100vh;
   grid-column: center-start / center-end;
   position: relative;
-  border-bottom: 1px solid #FFF;
+  border-bottom: 1px solid #fff;
 
   &::after {
     content: "";
@@ -30,6 +30,39 @@
     top: 0;
     right: 0;
   }
+  @include respond(tab-land) {
+    height: 53.5vh;
+
+    &::after {
+      bottom: 8.5%;
+      right: -7.5%;
+    }
+
+    &::before {
+      top: 0;
+      right: -5%;
+    }
+  }
+
+  @include respond(phone) {
+    height: 90rem;
+
+    &::after {
+      right: -20%;
+      top: 31%;
+      width: 16rem;
+      height: 16rem;
+    }
+
+    &::before {
+      right: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      height: 45rem;
+      z-index: 1;
+    }
+  }
 
   &__text-box {
     position: absolute;
@@ -37,12 +70,23 @@
     top: 50%;
     left: 0;
     transform: translateY(-50%);
+
+    @include respond(phone){
+      top: 71%;
+      text-align: center;
+    }
   }
 
   h1 {
     font-size: 8.8rem;
     letter-spacing: -0.25rem;
     line-height: 8.8rem;
+
+    @include respond(phone) {
+      font-size: 4.5rem;
+      line-height: 4.5rem;
+      letter-spacing: -1.136px;
+    }
   }
 
   span {
@@ -55,6 +99,10 @@
       position: absolute;
       bottom: 1rem;
       left: 0;
+
+      @include respond(phone){
+        bottom: 0;
+      }
     }
   }
 
@@ -64,6 +112,11 @@
     color: #d9d9d9;
     width: 44rem;
     margin-top: 4rem;
+
+    @include respond(phone){
+      width: 100%;
+      font-size: 2rem;
+    }
   }
 
   h6 {
@@ -88,8 +141,17 @@
     }
 
     &:hover {
+      color: #4ee1a0;
       &::after {
         transform: scaleY(3);
+      }
+    }
+
+    @include respond(phone){
+      font-size: 2rem;
+
+      &::after{
+        bottom: -1.5rem;
       }
     }
   }
@@ -105,8 +167,14 @@
   font-weight: 700;
   line-height: 3.2rem;
   letter-spacing: -0.444px;
-
+  user-select: none;
   margin-top: 4rem;
+
+  @include respond(phone){
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+  }
 
   ul {
     display: flex;
@@ -115,8 +183,13 @@
     li {
       margin: 0 1.2rem;
 
-      img{
+      svg {
+        fill: white;
         width: 3rem;
+
+        &:hover {
+          fill: #4ee1a0;
+        }
       }
     }
   }
