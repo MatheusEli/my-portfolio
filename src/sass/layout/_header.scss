@@ -29,6 +29,9 @@
     position: absolute;
     top: 0;
     right: 0;
+    animation-name: developerImgAnimation;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
   }
   @include respond(tab-land) {
     height: 53.5vh;
@@ -71,7 +74,7 @@
     left: 0;
     transform: translateY(-50%);
 
-    @include respond(phone){
+    @include respond(phone) {
       top: 71%;
       text-align: center;
     }
@@ -89,21 +92,18 @@
     }
   }
 
-  span {
+  .matheusEli {
     position: relative;
-    &::after {
-      content: "";
-      background-color: #4ee1a0;
-      height: 6px;
-      width: 100%;
-      position: absolute;
-      bottom: 1rem;
-      left: 0;
+  }
 
-      @include respond(phone){
-        bottom: 0;
-      }
-    }
+  .matheusEli::after {
+    content: "";
+    background-color: #4ee1a0;
+    height: 6px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
 
   p {
@@ -113,7 +113,7 @@
     width: 44rem;
     margin-top: 4rem;
 
-    @include respond(phone){
+    @include respond(phone) {
       width: 100%;
       font-size: 2rem;
     }
@@ -147,10 +147,10 @@
       }
     }
 
-    @include respond(phone){
+    @include respond(phone) {
       font-size: 2rem;
 
-      &::after{
+      &::after {
         bottom: -1.5rem;
       }
     }
@@ -170,7 +170,7 @@
   user-select: none;
   margin-top: 4rem;
 
-  @include respond(phone){
+  @include respond(phone) {
     flex-direction: column;
     align-items: center;
     row-gap: 2rem;

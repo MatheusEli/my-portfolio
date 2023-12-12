@@ -1,16 +1,12 @@
-@keyframes titleInAnimation {
+@keyframes developerImgAnimation {
     0%{
         opacity: 0;
-        transform: translateY(2rem);
+        transform: translateX(3rem);
     }
 
     50%{
-        opacity: .8;
-        transform: translateY(-1rem);
+        opacity: 1;
+        transform: translateX(0);
     }
 
-    100%{
-        opacity: 1;
-        transform: translateY(0);
-    }
 }

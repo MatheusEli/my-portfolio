@@ -153,7 +153,7 @@
 
   input,
   textarea,
-  button {
+  a {
     color: white;
     font-family: "Space Grotesk", sans-serif;
     background-color: transparent;
@@ -168,7 +168,7 @@
     resize: none;
   }
 
-  button {
+  a {
     text-transform: uppercase;
     margin-left: auto;
     display: block;

@@ -5,7 +5,7 @@ import SOSTEMSImage from "./assets/sostems.png";
 import NexterImage from "./assets/nexter.png";
 import TrilloImage from "./assets/trillo.png";
 import AtelieImage from "./assets/atelie.png";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import { ReactComponent as GithubIcon } from "./assets/github.svg";
 import { ReactComponent as MentorIcon } from "./assets/mentor.svg";
@@ -13,12 +13,41 @@ import { ReactComponent as LinkedinIcon } from "./assets/linkedin.svg";
 import { ReactComponent as TwitterIcon } from "./assets/twitter.svg";
 
 import { motion } from "framer-motion";
+import AnimatedTitle from "./AnimatedTitle";
 
 export default function App() {
+  
+  const [dados, setDados] = useState({
+    name: "",
+    email: "",
+    text: ""
+  });
+
+  const clear = () => {
+    setDados({
+      name: "",
+      email: "",
+      text: ""
+    });
+  };
+
+  const handleChange = (name, value) => {
+    setDados({
+      ...dados,
+      [name]: value
+    });
+  };
+
   const resultRef = useRef(null);
 
   const contact = () => {
     resultRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const attributes = {
+    initial: { opacity: 0, x: "-50" },
+    whileInView: { opacity: 1, x: 0 },
+    transition: { duration: 1 }
   };
 
 
@@ -67,18 +96,15 @@ export default function App() {
           </ul>
         </nav>
 
-        <div  className="header__text-box">
-          <h1>
-            Nice to meet you!
-            <br />
-            I'm <span>Matheus Eli</span>.
-          </h1>
-          <p>
+        <div className="header__text-box">
+          <AnimatedTitle text="Nice to meet you!" />
+          <AnimatedTitle text="I'm Matheus Eli" />
+          <motion.p {...attributes}>
             Based in the São Paulo, I’m a front-end developer passionate about
             building accessible web apps that users love.
-          </p>
+          </motion.p>
 
-          <h6 onClick={contact}>CONTACT ME</h6>
+          <motion.h6 {...attributes} onClick={contact}>CONTACT ME</motion.h6>
         </div>
       </section>
 
@@ -271,16 +297,16 @@ export default function App() {
 
           <form className="form">
             <div className="form__input-box">
-              <input type="text" placeholder="name" />
+              <input type="text" placeholder="name" onChange={(event) => handleChange("name", event.target.value)}/>
             </div>
             <div className="form__input-box">
-              <input type="text" placeholder="email" />
+              <input type="text" placeholder="email" onChange={(event) => handleChange("email", event.target.value)}/>
             </div>
             <div className="form__input-box">
-              <textarea placeholder="message" />
+              <textarea placeholder="message" onChange={(event) => handleChange("text", event.target.value)}/>
             </div>
 
-            <button>Send Message</button>
+            <a href={`mailto:matheuseli12@gmail.com?body=${dados.text}`} onClick={clear}>Send Message</a>
           </form>
         </div>
         <nav className="navigation">
