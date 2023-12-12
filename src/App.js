@@ -306,7 +306,7 @@ export default function App() {
               <textarea placeholder="message" onChange={(event) => handleChange("text", event.target.value)}/>
             </div>
 
-            <a href={`mailto:matheuseli12@gmail.com?body=${dados.text}`} onClick={clear}>Send Message</a>
+            <button>Send Message</button>
           </form>
         </div>
         <nav className="navigation">
