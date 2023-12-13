@@ -1,0 +1,39 @@
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 3.2rem;
+    letter-spacing: -0.444px;
+    user-select: none;
+    margin-top: 4rem;
+  
+    @include respond(phone) {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 2rem;
+    }
+  
+    ul {
+      display: flex;
+      list-style: none;
+  
+      li {
+        margin: 0 1.2rem;
+  
+        svg {
+          fill: white;
+          width: 3rem;
+  
+          &:hover {
+            fill: $color-green;
+          }
+        }
+      }
+    }
+  }
+  

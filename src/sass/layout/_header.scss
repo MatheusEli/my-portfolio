@@ -3,7 +3,7 @@
   height: 100vh;
   grid-column: center-start / center-end;
   position: relative;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid $color-white;
 
   &::after {
     content: "";
@@ -21,7 +21,7 @@
     content: "";
     width: 44rem;
     height: 72rem;
-    background-color: #242424;
+    background-color: $color-grey-dark;
     background-image: url("../../assets/developer.png");
     background-position: 80% 100%;
     background-repeat: no-repeat;
@@ -50,7 +50,7 @@
       position: relative;
       &::after {
         content: "";
-        background-color: #4ee1a0;
+        background-color: $color-green;
         height: 6px;
         width: 100%;
         position: absolute;
@@ -112,7 +112,7 @@
 
   .matheusEli::after {
     content: "";
-    background-color: #4ee1a0;
+    background-color: $color-green;
     height: 6px;
     width: 100%;
     position: absolute;
@@ -123,7 +123,7 @@
   p {
     font-size: 1.8rem;
     line-height: 2.8rem;
-    color: #d9d9d9;
+    color: $color-grey;
     width: 44rem;
     margin-top: 4rem;
 
@@ -148,14 +148,14 @@
       position: absolute;
       width: 100%;
       height: 2px;
-      background-color: #4ee1a0;
+      background-color: $color-green;
       bottom: -0.5rem;
       left: 0;
       transition: all 0.2s ease-out;
     }
 
     &:hover {
-      color: #4ee1a0;
+      color: $color-green;
       &::after {
         transform: scaleY(3);
       }
@@ -166,44 +166,6 @@
 
       &::after {
         bottom: -1.5rem;
-      }
-    }
-  }
-}
-
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  font-size: 3.2rem;
-  font-weight: 700;
-  line-height: 3.2rem;
-  letter-spacing: -0.444px;
-  user-select: none;
-  margin-top: 4rem;
-
-  @include respond(phone) {
-    flex-direction: column;
-    align-items: center;
-    row-gap: 2rem;
-  }
-
-  ul {
-    display: flex;
-    list-style: none;
-
-    li {
-      margin: 0 1.2rem;
-
-      svg {
-        fill: white;
-        width: 3rem;
-
-        &:hover {
-          fill: #4ee1a0;
-        }
       }
     }
   }
