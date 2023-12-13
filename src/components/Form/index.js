@@ -7,14 +7,14 @@ export default function Form() {
   const [dados, setDados] = useState({
     name: "",
     email: "",
-    text: ""
+    text: "",
   });
 
   const clear = () => {
     setDados({
       name: "",
       email: "",
-      text: ""
+      text: "",
     });
   };
 
@@ -24,7 +24,7 @@ export default function Form() {
     }
     setDados({
       ...dados,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -40,14 +40,11 @@ export default function Form() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post(
-        process.env.FUNCTION_URL,
-        {
-          nome: dados.name,
-          email: dados.email,
-          message: dados.text
-        }
-      );
+      await axios.post('https://matheuseli-portfolio.netlify.app/.netlify/functions/send-email', {
+        nome: dados.name,
+        email: dados.email,
+        message: dados.text,
+      });
       clear();
     } catch (error) {
       console.log(error);
@@ -89,7 +86,7 @@ export default function Form() {
               color: "#FF6F5B",
               textTransform: "none",
               fontSize: "1.2rem",
-              marginLeft: "auto"
+              marginLeft: "auto",
             }}
           >
             Sorry, invalid format here
