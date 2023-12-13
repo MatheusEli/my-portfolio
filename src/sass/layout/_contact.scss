@@ -168,6 +168,12 @@
     resize: none;
   }
 
+  input[type="email"]:invalid {
+    background-image: url("../../assets/warning.svg");
+    background-repeat: no-repeat;
+    background-position: 100%;
+  }
+
   button {
     text-transform: uppercase;
     margin-left: auto;
@@ -196,6 +202,21 @@
       color: #4ee1a0;
       &::after {
         transform: scaleY(3);
+      }
+    }
+
+    &:disabled {
+      color: gray;
+      cursor: auto;
+      user-select: none;
+      &::after {
+        background-color: gray;
+      }
+
+      &:hover {
+        &::after {
+          transform: none;
+        }
       }
     }
 

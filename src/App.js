@@ -5,7 +5,7 @@ import SOSTEMSImage from "./assets/sostems.png";
 import NexterImage from "./assets/nexter.png";
 import TrilloImage from "./assets/trillo.png";
 import AtelieImage from "./assets/atelie.png";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 import { ReactComponent as GithubIcon } from "./assets/github.svg";
 import { ReactComponent as MentorIcon } from "./assets/mentor.svg";
@@ -15,27 +15,67 @@ import { ReactComponent as TwitterIcon } from "./assets/twitter.svg";
 import { motion } from "framer-motion";
 import AnimatedTitle from "./AnimatedTitle";
 
+import axios from "axios";
+
 export default function App() {
-  
+  const [envioHabilitado, setEnvioHabilitado] = useState(false);
+  const [isValidEmail, setIsValidEmail] = useState(true);
   const [dados, setDados] = useState({
     name: "",
     email: "",
-    text: ""
+    text: "",
   });
 
   const clear = () => {
     setDados({
       name: "",
       email: "",
-      text: ""
+      text: "",
     });
   };
 
   const handleChange = (name, value) => {
+
+    if(name === 'email'){
+      validateEmail(value);
+    }
     setDados({
       ...dados,
       [name]: value
     });
+  };
+
+  useEffect(() => {
+    const { name, email, text } = dados;
+
+    const todosCamposPreenchidos =
+      name.trim() !== "" && email.trim() !== "" && text.trim() !== "";
+
+    setEnvioHabilitado(todosCamposPreenchidos);
+  }, [dados]);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post(
+        "https://6578c4eb351d22072f3501ef--matheuseli-portfolio.netlify.app/.netlify/functions/send-email",
+        {
+          nome: dados.name,
+          email: dados.email,
+          message: dados.text,
+        }
+      );
+      clear();
+    } catch (error) {
+      console.log(error);
+    }
+
+    clear();
+  };
+
+  const validateEmail = (inputEmail) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setIsValidEmail(emailRegex.test(inputEmail));
   };
 
   const resultRef = useRef(null);
@@ -47,9 +87,8 @@ export default function App() {
   const attributes = {
     initial: { opacity: 0, x: "-50" },
     whileInView: { opacity: 1, x: 0 },
-    transition: { duration: 1 }
+    transition: { duration: 1 },
   };
-
 
   return (
     <div className="container">
@@ -104,7 +143,9 @@ export default function App() {
             building accessible web apps that users love.
           </motion.p>
 
-          <motion.h6 {...attributes} onClick={contact}>CONTACT ME</motion.h6>
+          <motion.h6 {...attributes} onClick={contact}>
+            CONTACT ME
+          </motion.h6>
         </div>
       </section>
 
@@ -295,18 +336,34 @@ export default function App() {
             </p>
           </div>
 
-          <form className="form">
+          <form className="form" onSubmit={handleSubmit}>
             <div className="form__input-box">
-              <input type="text" placeholder="name" onChange={(event) => handleChange("name", event.target.value)}/>
+              <input
+                type="text"
+                placeholder="name"
+                value={dados.name}
+                onChange={(event) => handleChange("name", event.target.value)}
+              />
             </div>
             <div className="form__input-box">
-              <input type="text" placeholder="email" onChange={(event) => handleChange("email", event.target.value)}/>
+              <input
+                type="email"
+                placeholder="email"
+                value={dados.email}
+                style={{ borderBottom: isValidEmail ? '' : '1px solid #FF6F5B' }}
+                onChange={(event) => handleChange("email", event.target.value)}
+                />
+                {!isValidEmail && <p style={{ marginTop: '0', textAlign: 'right', color: '#FF6F5B', textTransform: 'none', fontSize: '1.2rem', marginLeft: 'auto' }}>Sorry, invalid format here</p>}
             </div>
             <div className="form__input-box">
-              <textarea placeholder="message" onChange={(event) => handleChange("text", event.target.value)}/>
+              <textarea
+                placeholder="message"
+                value={dados.text}
+                onChange={(event) => handleChange("text", event.target.value)}
+              />
             </div>
 
-            <button>Send Message</button>
+            <button disabled={!envioHabilitado}>Send Message</button>
           </form>
         </div>
         <nav className="navigation">
