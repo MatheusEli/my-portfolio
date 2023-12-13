@@ -15,8 +15,16 @@ exports.handler = async function (event, context) {
 
     await sgMail.send(msg);
 
+    const headers = {
+      'Access-Control-Allow-Origin': 'https://matheuseli-portfolio.netlify.app/',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE'
+    };
+
+
     return {
       statusCode: 200,
+      headers,
       body: 'E-mail enviado com sucesso!'
     };
   } catch (error) {

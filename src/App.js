@@ -58,7 +58,7 @@ export default function App() {
     event.preventDefault();
     try {
       await axios.post(
-        "https://6578c4eb351d22072f3501ef--matheuseli-portfolio.netlify.app/.netlify/functions/send-email",
+        "https://matheuseli-portfolio.netlify.app/.netlify/functions/send-email",
         {
           nome: dados.name,
           email: dados.email,
