@@ -45,6 +45,19 @@
       top: 0;
       right: -5%;
     }
+
+    span {
+      position: relative;
+      &::after {
+        content: "";
+        background-color: #4ee1a0;
+        height: 6px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
   }
 
   @include respond(phone) {
@@ -64,6 +77,7 @@
       width: 50%;
       height: 45rem;
       z-index: 1;
+      animation: none;
     }
   }
 

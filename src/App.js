@@ -16,6 +16,7 @@ import { motion } from "framer-motion";
 import AnimatedTitle from "./AnimatedTitle";
 
 import axios from "axios";
+import { isMobile } from "react-device-detect";
 
 export default function App() {
   const [envioHabilitado, setEnvioHabilitado] = useState(false);
@@ -35,13 +36,12 @@ export default function App() {
   };
 
   const handleChange = (name, value) => {
-
-    if(name === 'email'){
+    if (name === "email") {
       validateEmail(value);
     }
     setDados({
       ...dados,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -84,10 +84,10 @@ export default function App() {
     resultRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  const attributes = {
+  const attributes = !isMobile && {
     initial: { opacity: 0, x: "-50" },
     whileInView: { opacity: 1, x: 0 },
-    transition: { duration: 1 },
+    transition: { duration: 1 }
   };
 
   return (
@@ -136,8 +136,18 @@ export default function App() {
         </nav>
 
         <div className="header__text-box">
-          <AnimatedTitle text="Nice to meet you!" />
-          <AnimatedTitle text="I'm Matheus Eli" />
+          {isMobile ? (
+            <h1>
+              Nice to meet you!
+              <br />
+              I'm <span>Matheus Eli</span>.
+            </h1>
+          ) : (
+            <>
+              <AnimatedTitle text="Nice to meet you!" />
+              <AnimatedTitle text="I'm Matheus Eli" />
+            </>
+          )}
           <motion.p {...attributes}>
             Based in the São Paulo, I’m a front-end developer passionate about
             building accessible web apps that users love.
@@ -350,10 +360,25 @@ export default function App() {
                 type="email"
                 placeholder="email"
                 value={dados.email}
-                style={{ borderBottom: isValidEmail ? '' : '1px solid #FF6F5B' }}
+                style={{
+                  borderBottom: isValidEmail ? "" : "1px solid #FF6F5B",
+                }}
                 onChange={(event) => handleChange("email", event.target.value)}
-                />
-                {!isValidEmail && <p style={{ marginTop: '0', textAlign: 'right', color: '#FF6F5B', textTransform: 'none', fontSize: '1.2rem', marginLeft: 'auto' }}>Sorry, invalid format here</p>}
+              />
+              {!isValidEmail && (
+                <p
+                  style={{
+                    marginTop: "0",
+                    textAlign: "right",
+                    color: "#FF6F5B",
+                    textTransform: "none",
+                    fontSize: "1.2rem",
+                    marginLeft: "auto",
+                  }}
+                >
+                  Sorry, invalid format here
+                </p>
+              )}
             </div>
             <div className="form__input-box">
               <textarea
