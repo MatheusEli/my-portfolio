@@ -1,0 +1,26 @@
+.heading-primary {
+  font-size: 8.8rem;
+  line-height: 8.8rem;
+  letter-spacing: -2.5px;
+  font-weight: 700;
+  display: inline-block;
+
+  @include respond(phone) {
+    font-size: 5rem;
+    line-height: 5rem;
+    letter-spacing: -1.136px;
+  }
+}
+
+.paragraph {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  color: $color-grey;
+  width: 44rem;
+  margin-top: 4rem;
+
+  @include respond(phone) {
+    width: 100%;
+    font-size: 2rem;
+  }
+}

@@ -8,8 +8,8 @@ import AtelieImage from "../../assets/atelie.png";
 export default function Projects({contact}) {
   return (
     <section className="projects">
-        <h2>Projects</h2>
-        <h6 onClick={() => contact()}>CONTACT ME</h6>
+        <h2 className='heading-primary'>Projects</h2>
+        <h6 onClick={() => contact()} className='btn'>CONTACT ME</h6>
 
         <ul>
           <li>

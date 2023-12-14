@@ -101,7 +101,7 @@ export default function Form() {
         />
       </div>
 
-      <button disabled={!envioHabilitado}>Send Message</button>
+      <button disabled={!envioHabilitado} className='btn'>Send Message</button>
     </form>
   );
 }

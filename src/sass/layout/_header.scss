@@ -94,15 +94,10 @@
     }
   }
 
-  h1 {
-    font-size: 8.8rem;
-    letter-spacing: -0.25rem;
-    line-height: 8.8rem;
-
+  .heading-primary {
     @include respond(phone) {
       font-size: 4.5rem;
       line-height: 4.5rem;
-      letter-spacing: -1.136px;
     }
   }
 
@@ -120,53 +115,7 @@
     left: 0;
   }
 
-  p {
-    font-size: 1.8rem;
-    line-height: 2.8rem;
-    color: $color-grey;
-    width: 44rem;
-    margin-top: 4rem;
-
-    @include respond(phone) {
-      width: 100%;
-      font-size: 2rem;
-    }
-  }
-
-  h6 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    line-height: 2.6rem;
-    letter-spacing: 2.286px;
-    cursor: pointer;
-    display: inline-block;
-    margin-top: 6rem;
-    position: relative;
-
-    &::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background-color: $color-green;
-      bottom: -0.5rem;
-      left: 0;
-      transition: all 0.2s ease-out;
-    }
-
-    &:hover {
-      color: $color-green;
-      &::after {
-        transform: scaleY(3);
-      }
-    }
-
-    @include respond(phone) {
-      font-size: 2rem;
-
-      &::after {
-        bottom: -1.5rem;
-      }
-    }
+  .paragraph {
+    margin-bottom: 6rem;
   }
 }

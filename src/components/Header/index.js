@@ -14,7 +14,7 @@ export default function Header({contact}) {
       <Navigation />
       <div className="header__text-box">
         {isMobile ? (
-          <h1>
+          <h1 className='heading-primary'>
             Nice to meet you!
             <br />
             I'm <span>Matheus Eli</span>.
@@ -25,12 +25,12 @@ export default function Header({contact}) {
             <AnimatedTitle text="I'm Matheus Eli" />
           </>
         )}
-        <motion.p {...attributes}>
+        <motion.p {...attributes} className='paragraph'>
           Based in the São Paulo, I’m a front-end developer passionate about
           building accessible web apps that users love.
         </motion.p>
 
-        <motion.h6 {...attributes} onClick={() => contact()}>
+        <motion.h6 {...attributes} onClick={() => contact()} className='btn'>
           CONTACT ME
         </motion.h6>
       </div>

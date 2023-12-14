@@ -40,7 +40,7 @@ export default function AnimatedTitle({ text }) {
   };
 
   return (
-    <h1 aria-label={text}>
+    <h1 aria-label={text} className='heading-primary'>
       {text.split(" ").map((word, index, array) => {
         const isMatheus = word === "Matheus";
         const isEli = word === "Eli";

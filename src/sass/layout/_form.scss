@@ -7,6 +7,10 @@
       &:not(:first-of-type) {
         margin-top: 1.5rem;
       }
+
+      &:last-of-type{
+        margin-bottom: 6rem;
+      }
   
       @include respond(tab-land) {
         margin-top: 3.5rem;
@@ -67,59 +71,8 @@
       background-position: 100%;
     }
   
-    button {
-      text-transform: uppercase;
-      margin-left: auto;
+    .btn{
       display: block;
-      font-size: 1.6rem;
-      font-weight: 700;
-      line-height: 2.6rem;
-      letter-spacing: 2.286px;
-      cursor: pointer;
-      margin-top: 6rem;
-      position: relative;
-      border-style: none;
-  
-      &::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background-color: $color-green;
-        bottom: -0.5rem;
-        left: 0;
-        transition: all 0.2s ease-out;
-      }
-  
-      &:hover {
-        color: $color-green;
-        &::after {
-          transform: scaleY(3);
-        }
-      }
-  
-      &:disabled {
-        color: gray;
-        cursor: auto;
-        user-select: none;
-        &::after {
-          background-color: gray;
-        }
-  
-        &:hover {
-          &::after {
-            transform: none;
-          }
-        }
-      }
-  
-      @include respond(phone) {
-        font-size: 2rem;
-  
-        &::after {
-          bottom: -1.5rem;
-        }
-      }
     }
   }
   
