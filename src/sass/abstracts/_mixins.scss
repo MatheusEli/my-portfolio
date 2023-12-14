@@ -23,7 +23,7 @@ ORDER: Base + typography > general layout +grid > page layout > components
     }
 
     @if $breakpoint == tab-port{
-        @media only screen and (max-width: 56.25em) {// 900px
+        @media only screen and (max-width: 58.25em) {// 1024px
             @content
         }
     }

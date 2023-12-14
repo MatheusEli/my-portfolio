@@ -60,6 +60,15 @@
     }
   }
 
+  @include respond(tab-port){
+    height: 63rem;
+
+    &::before{
+      width: 25rem;
+      height: 60rem;
+    }
+  }
+
   @include respond(phone) {
     height: 90rem;
 
