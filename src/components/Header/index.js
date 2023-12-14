@@ -26,7 +26,7 @@ export default function Header({contact}) {
           </>
         )}
         <motion.p {...attributes} className='paragraph'>
-          Based in the São Paulo, I’m a front-end developer passionate about
+          Based in São Paulo, I’m a front-end developer passionate about
           building accessible web apps that users love.
         </motion.p>
 
