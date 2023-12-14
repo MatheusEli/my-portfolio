@@ -28,6 +28,18 @@ export default function Languages() {
           <h4>Sass</h4>
           <p>2 Years Experience</p>
         </li>
+        <li className="languages__item">
+          <h4>Flutter</h4>
+          <p>1 Year Experience</p>
+        </li>
+        <li className="languages__item">
+          <h4>Angular</h4>
+          <p>2 Years Experience</p>
+        </li>
+        <li className="languages__item">
+          <h4>Ionic</h4>
+          <p>2 Years Experience</p>
+        </li>
       </ul>
     </section>
   );

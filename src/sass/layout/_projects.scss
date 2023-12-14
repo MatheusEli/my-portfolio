@@ -7,6 +7,22 @@
   align-items: center;
   padding-bottom: 8rem;
 
+  &__menu{
+    .btn{
+      &::after{
+        background-color: transparent;
+      }
+    }
+
+    .item-active{
+      .btn{
+        &::after{
+          background-color: $color-green;
+        }
+      }
+    }
+  }
+
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -14,6 +30,7 @@
     row-gap: 7rem;
     list-style: none;
     margin-top: 8rem;
+    width: 100%;
 
     li {
       width: 48%;

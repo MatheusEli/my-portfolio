@@ -55,7 +55,7 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     position: absolute;
-    top: 3.7%;
+    top: 4.5%;
     left: 0;
 
     @include respond(tab-land){
@@ -79,20 +79,20 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     position: absolute;
-    top: 27.3%;
+    top: 37.3%;
     right: -10%;
     transform: rotateY(180deg);
 
     @include respond(tab-land){
       width: 60%;
       right: -30%;
-      top: 27.8%;
+      top: 30.8%;
     }
 
     @include respond(phone){
       width: 90%;
       right: -45%;
-      top: 26.5%;
+      top: 27.5%;
     }
   }
 }
