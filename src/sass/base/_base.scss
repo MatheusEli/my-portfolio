@@ -55,19 +55,19 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     position: absolute;
-    top: 4.5%;
+    top: 13.2rem;
     left: 0;
 
     @include respond(tab-land){
       width: 60%;
       left: -30%;
-      top: 2.2%;
+      top: 10rem;
     }
 
     @include respond(phone){
       width: 90%;
       left: -40%;
-      top: 3%;
+      top: 16rem;
     }
   }
 
@@ -79,20 +79,20 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     position: absolute;
-    top: 37.3%;
+    top: 110rem;
     right: -10%;
     transform: rotateY(180deg);
 
     @include respond(tab-land){
       width: 60%;
       right: -30%;
-      top: 30.8%;
+      top: 145rem;
     }
 
     @include respond(phone){
       width: 90%;
       right: -45%;
-      top: 27.5%;
+      top: 210rem;
     }
   }
 }
