@@ -93,7 +93,7 @@ export default function Websites() {
         <figure>
           <img src={SpaceImage} alt="Space Tourism Website" />
           <figcaption>
-            <h5>Campanha Atelie</h5>
+            <h5>Space Tourism Website</h5>
             ANGULAR HTML SASS TYPESCRIPT
           </figcaption>
         </figure>
